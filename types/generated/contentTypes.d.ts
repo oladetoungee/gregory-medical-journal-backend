@@ -1043,6 +1043,37 @@ export interface ApiPolicyPolicy extends Schema.CollectionType {
   };
 }
 
+export interface ApiTermOfUseTermOfUse extends Schema.CollectionType {
+  collectionName: 'term_of_uses';
+  info: {
+    singularName: 'term-of-use';
+    pluralName: 'term-of-uses';
+    displayName: 'termOfUse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    term: Attribute.String & Attribute.Required & Attribute.Unique;
+    desc: Attribute.Text & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::term-of-use.term-of-use',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::term-of-use.term-of-use',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1069,6 +1100,7 @@ declare module '@strapi/types' {
       'api::manuscript.manuscript': ApiManuscriptManuscript;
       'api::member.member': ApiMemberMember;
       'api::policy.policy': ApiPolicyPolicy;
+      'api::term-of-use.term-of-use': ApiTermOfUseTermOfUse;
     }
   }
 }

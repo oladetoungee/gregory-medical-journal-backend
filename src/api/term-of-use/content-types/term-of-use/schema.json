@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "term_of_uses",
+  "info": {
+    "singularName": "term-of-use",
+    "pluralName": "term-of-uses",
+    "displayName": "termOfUse"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "term": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "desc": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    }
+  }
+}
