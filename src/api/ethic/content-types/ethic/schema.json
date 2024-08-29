@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ethics",
+  "info": {
+    "singularName": "ethic",
+    "pluralName": "ethics",
+    "displayName": "ethic",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "content": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

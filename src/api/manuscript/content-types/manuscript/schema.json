@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "manuscripts",
+  "info": {
+    "singularName": "manuscript",
+    "pluralName": "manuscripts",
+    "displayName": "manuscript"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "paragraph": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "list": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

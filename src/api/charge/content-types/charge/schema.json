@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "charges",
+  "info": {
+    "singularName": "charge",
+    "pluralName": "charges",
+    "displayName": "charge",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "required": false,
+      "unique": true,
+      "type": "integer"
+    },
+    "type": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "details": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "currency": {
+      "type": "string",
+      "unique": true
+    }
+  }
+}
