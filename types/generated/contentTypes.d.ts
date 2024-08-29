@@ -923,6 +923,29 @@ export interface ApiEthicEthic extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqFaq extends Schema.CollectionType {
+  collectionName: 'faqs';
+  info: {
+    singularName: 'faq';
+    pluralName: 'faqs';
+    displayName: 'faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    question: Attribute.String & Attribute.Required;
+    answer: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiManuscriptManuscript extends Schema.CollectionType {
   collectionName: 'manuscripts';
   info: {
@@ -989,6 +1012,37 @@ export interface ApiMemberMember extends Schema.CollectionType {
   };
 }
 
+export interface ApiPolicyPolicy extends Schema.CollectionType {
+  collectionName: 'policies';
+  info: {
+    singularName: 'policy';
+    pluralName: 'policies';
+    displayName: 'policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    policy: Attribute.String & Attribute.Required & Attribute.Unique;
+    desc: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::policy.policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::policy.policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1011,8 +1065,10 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::charge.charge': ApiChargeCharge;
       'api::ethic.ethic': ApiEthicEthic;
+      'api::faq.faq': ApiFaqFaq;
       'api::manuscript.manuscript': ApiManuscriptManuscript;
       'api::member.member': ApiMemberMember;
+      'api::policy.policy': ApiPolicyPolicy;
     }
   }
 }
