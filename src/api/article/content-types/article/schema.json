@@ -36,7 +36,7 @@
     "link": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "editorPick": {
       "type": "boolean",
