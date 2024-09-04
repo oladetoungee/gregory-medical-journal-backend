@@ -33,11 +33,6 @@
         "images"
       ]
     },
-    "link": {
-      "type": "text",
-      "required": true,
-      "unique": false
-    },
     "editorPick": {
       "type": "boolean",
       "required": true

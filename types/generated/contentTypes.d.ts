@@ -837,7 +837,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     author: Attribute.String & Attribute.Required;
     excerpt: Attribute.Blocks & Attribute.Required;
     image: Attribute.Media<'images'> & Attribute.Required;
-    link: Attribute.Text & Attribute.Required;
     editorPick: Attribute.Boolean & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
