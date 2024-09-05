@@ -36,6 +36,10 @@
     "editorPick": {
       "type": "boolean",
       "required": true
+    },
+    "link": {
+      "type": "text",
+      "required": true
     }
   }
 }
