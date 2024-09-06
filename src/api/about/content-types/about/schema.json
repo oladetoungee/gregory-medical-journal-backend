@@ -22,12 +22,9 @@
       "required": true
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      "type": "text",
+      "required": true,
+      "unique": true
     }
   }
 }

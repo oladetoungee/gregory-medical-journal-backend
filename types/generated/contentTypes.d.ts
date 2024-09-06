@@ -802,7 +802,7 @@ export interface ApiAboutAbout extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
     description: Attribute.Blocks & Attribute.Required;
-    image: Attribute.Media<'images'> & Attribute.Required;
+    image: Attribute.Text & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -836,9 +836,9 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
     author: Attribute.String & Attribute.Required;
     excerpt: Attribute.Blocks & Attribute.Required;
-    image: Attribute.Media<'images'> & Attribute.Required;
     editorPick: Attribute.Boolean & Attribute.Required;
     link: Attribute.Text & Attribute.Required;
+    image: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

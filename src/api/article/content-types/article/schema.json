@@ -25,19 +25,15 @@
       "type": "blocks",
       "required": true
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "editorPick": {
       "type": "boolean",
       "required": true
     },
     "link": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
       "type": "text",
       "required": true
     }
