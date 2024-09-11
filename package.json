@@ -15,8 +15,10 @@
     "@strapi/plugin-i18n": "4.25.8",
     "@strapi/plugin-users-permissions": "4.25.8",
     "@strapi/strapi": "4.25.8",
+    "axios": "^1.7.7",
     "better-sqlite3": "8.6.0",
     "koa-cache": "^0.1.0",
+    "node-cron": "^3.0.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
@@ -32,5 +34,8 @@
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node-cron": "^3.0.11"
+  }
 }
