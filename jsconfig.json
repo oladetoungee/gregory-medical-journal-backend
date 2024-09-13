@@ -4,6 +4,8 @@
     "module": "NodeNext",
     "target": "ES2021",
     "checkJs": true,
-    "allowJs": true
-  }
+    "allowJs": true,
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules"]
 }
