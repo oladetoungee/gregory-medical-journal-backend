@@ -7,7 +7,7 @@ const agent = new https.Agent({
 });
 
 // Schedule the job to run every 5 minutes
-cron.schedule('*/5 * * * *', async () => {
+cron.schedule('*/3 * * * *', async () => {
   try {
     await axios.get('https://gregory-medical-journal-backend.onrender.com/api/articles', { httpsAgent: agent });
     console.log('Ping successful!');
