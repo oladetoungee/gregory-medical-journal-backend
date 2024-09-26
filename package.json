@@ -17,6 +17,7 @@
     "@strapi/strapi": "4.25.8",
     "axios": "^1.7.7",
     "better-sqlite3": "8.6.0",
+    "esbuild": "^0.24.0",
     "koa-cache": "^0.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
