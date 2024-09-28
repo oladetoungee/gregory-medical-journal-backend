@@ -839,11 +839,19 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
-    author: Attribute.String & Attribute.Required;
     excerpt: Attribute.Blocks & Attribute.Required;
     editorPick: Attribute.Boolean & Attribute.Required;
-    link: Attribute.Text & Attribute.Required;
-    image: Attribute.Text & Attribute.Required;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    document: Attribute.Media<'files'> & Attribute.Required;
+    submissionDate: Attribute.DateTime & Attribute.Required;
+    submittedByName: Attribute.String;
+    submittedByEmail: Attribute.Email;
+    status: Attribute.Enumeration<
+      ['submitted', 'under review', 'accepted', 'rejected', 'approved']
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'submitted'>;
+    Authors: Attribute.JSON & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1017,6 +1025,37 @@ export interface ApiMemberMember extends Schema.CollectionType {
   };
 }
 
+export interface ApiNoticeNotice extends Schema.CollectionType {
+  collectionName: 'notices';
+  info: {
+    singularName: 'notice';
+    pluralName: 'notices';
+    displayName: 'Notice';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::notice.notice',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::notice.notice',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPolicyPolicy extends Schema.CollectionType {
   collectionName: 'policies';
   info: {
@@ -1104,6 +1143,7 @@ declare module '@strapi/types' {
       'api::faq.faq': ApiFaqFaq;
       'api::manuscript.manuscript': ApiManuscriptManuscript;
       'api::member.member': ApiMemberMember;
+      'api::notice.notice': ApiNoticeNotice;
       'api::policy.policy': ApiPolicyPolicy;
       'api::term-of-use.term-of-use': ApiTermOfUseTermOfUse;
     }

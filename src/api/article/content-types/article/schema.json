@@ -17,10 +17,6 @@
       "required": true,
       "unique": true
     },
-    "author": {
-      "type": "string",
-      "required": true
-    },
     "excerpt": {
       "type": "blocks",
       "required": true
@@ -29,12 +25,46 @@
       "type": "boolean",
       "required": true
     },
-    "link": {
-      "type": "text",
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "document": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "submissionDate": {
+      "type": "datetime",
       "required": true
     },
-    "image": {
-      "type": "text",
+    "submittedByName": {
+      "type": "string"
+    },
+    "submittedByEmail": {
+      "type": "email"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "submitted",
+        "under review",
+        "accepted",
+        "rejected",
+        "approved"
+      ],
+      "required": true,
+      "default": "submitted"
+    },
+    "Authors": {
+      "type": "json",
       "required": true
     }
   }
