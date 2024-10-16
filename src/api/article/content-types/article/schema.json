@@ -58,6 +58,7 @@
         "under review",
         "accepted",
         "rejected",
+        "archived",
         "approved"
       ],
       "required": true,

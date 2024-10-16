@@ -847,7 +847,14 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     submittedByName: Attribute.String;
     submittedByEmail: Attribute.Email;
     status: Attribute.Enumeration<
-      ['submitted', 'under review', 'accepted', 'rejected', 'approved']
+      [
+        'submitted',
+        'under review',
+        'accepted',
+        'rejected',
+        'archived',
+        'approved'
+      ]
     > &
       Attribute.Required &
       Attribute.DefaultTo<'submitted'>;
