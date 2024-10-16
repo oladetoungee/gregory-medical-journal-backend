@@ -89,6 +89,9 @@
     "acceptedArticles": {
       "type": "integer",
       "default": 0
+    },
+    "affiliation": {
+      "type": "string"
     }
   }
 }

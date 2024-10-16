@@ -776,6 +776,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     submittedArticles: Attribute.Integer & Attribute.DefaultTo<0>;
     image: Attribute.Media<'images'>;
     acceptedArticles: Attribute.Integer & Attribute.DefaultTo<0>;
+    affiliation: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
